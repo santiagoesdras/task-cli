@@ -18,9 +18,10 @@ def menu(option):
   elif option == "2":
     listTask()
 
-print("Options for you task: \n 1. Add new Task \n 2. List tasks")
+while(1):
+  print("Options for you task: \n 1. Add new Task \n 2. List tasks")
 
-menuOption = input("Ingrese una opcion ")
+  menuOption = input("Ingrese una opcion ")
 
-menu(menuOption)
+  menu(menuOption)
 
