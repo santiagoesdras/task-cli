@@ -1,4 +1,7 @@
-dbTasks = ["test", "learning python"]
+dbTasks = []
+dbTasks [1] = "test"
+dbTasks [2] = "learning python"
+
 
 # add new task in array
 def addTask(task):
