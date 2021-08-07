@@ -1,5 +1,11 @@
 dbTasks = ["test", "learning python"]
 
+def booleanvalue(ciclo):
+  if ciclo > 0:
+    return 1
+  elif ciclo <=0:
+    return 0
+
 # add new task in array
 def addTask(task):
   dbTasks.append(task)
@@ -25,9 +31,13 @@ def menu(option):
   elif option == "1":
     taskInput = input("Title for new task: ")
     addTask(taskInput)
+    ciclo = +1
+    booleanvalue(ciclo)
 
   elif option == "2":
     listTask()
+    ciclo = +1
+    booleanvalue(ciclo)
 
   elif option == "3":
     try:
@@ -50,10 +60,13 @@ def menu(option):
   else:
     print("Option not valid")
 
-while(1):
-  print("Options for you task: \n 1. Add new Task \n 2. List tasks")
 
-  menuOption = input("Ingrese una opcion ")
+def imenu():
+    print("\n\tOptions for you task: \n\t0.Exit \n\t1.Add new Task \n\t2.List tasks \n\t3.Delete tasks")
 
-  menu(menuOption)
+    menuOption = input("\tEnter an option ")
+    menu(menuOption)
 
+while(booleanvalue):
+  imenu()
+ 
