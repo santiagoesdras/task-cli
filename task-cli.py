@@ -62,5 +62,8 @@ def imenu():
 while(1):
   imenu()
   time.sleep(2)
-  os.system("cls")
+  try:
+    os.system("cls")
+  except:
+    os.system("clear")
  
