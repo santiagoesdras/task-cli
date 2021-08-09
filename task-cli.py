@@ -1,7 +1,7 @@
-dbTasks = []
-dbTasks [1] = "test"
-dbTasks [2] = "learning python"
+import os
+import time
 
+dbTasks = ["test","learning python"]
 
 # add new task in array
 def addTask(task):
@@ -61,4 +61,6 @@ def imenu():
 
 while(1):
   imenu()
+  time.sleep(2)
+  os.system("cls")
  
