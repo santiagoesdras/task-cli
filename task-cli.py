@@ -11,10 +11,12 @@ def listTask():
 
 # remove task in the array
 def removeTask(i):
+  i + 1
   dbTasks.pop(i)
 
 # edit task in the array
 def editTask(i, updateTask):
+  i + 1
   dbTasks[i] = updateTask 
 
 def menu(option):
