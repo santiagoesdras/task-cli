@@ -1,7 +1,8 @@
 import os
 import time
+from sys import platform
 
-dbTasks = ["test","learning python"]
+dbTasks = []
 
 # add new task in array
 def addTask(task):
@@ -14,13 +15,11 @@ def listTask():
 
 # remove task in the array
 def removeTask(i):
-  i + 1
   dbTasks.pop(i)
 
 # edit task in the array
 def editTask(i, updateTask):
-  i + 1
-  dbTasks[i] = updateTask 
+   dbTasks[i] = updateTask 
 
 def menu(option):
   if option == "0":
@@ -63,9 +62,9 @@ def imenu():
 
 while(1):
   imenu()
+
   time.sleep(2)
-  try:
+  if platform == "win32": 
     os.system("cls")
-  except:
+  else:
     os.system("clear")
- 
