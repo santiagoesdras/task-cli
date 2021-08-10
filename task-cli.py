@@ -60,7 +60,8 @@ def imenu():
     menu(menuOption)
 
 while(1):
+  try: os.system("cls")   
+  except:os.system("clear")
   imenu()
   time.sleep(2)
-  os.system("cls")
  
