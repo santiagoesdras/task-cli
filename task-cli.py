@@ -1,17 +1,14 @@
+from tabulate import tabulate, tabulate_formats
+from sys import platform
 import os
 import time
-from sys import platform
 
 dbTasks = []
+options = ["0.Exit" , "1.Add new Task", "2.Delete tasks" , "3.Update tasks"]
 
 # add new task in array
 def addTask(task):
   dbTasks.append(task)
-
-# list the tasks in the array
-def listTask():
-  for task in dbTasks:
-    print("* ", task)
 
 # remove task in the array
 def removeTask(i):
@@ -30,41 +27,33 @@ def menu(option):
     addTask(taskInput)
     
   elif option == "2":
-    listTask()
-   
-  elif option == "3":
     try:
       removeInput = input("\n\tWhat task do you want to delete?: ")
       removeTask(int(removeInput))
     except:
       print("\tNot a number")
-  
-  elif option == "4":
+   
+  elif option == "3":
     try:
       editInput = input("\n\tWhat task do you want to update?: ")
       updateInput = input("\n\tWhat title will you put it?: ")
       editTask(int(editInput), updateInput)
     except: 
       print("\tNot a number")
-
-  elif option == "5":
-    print("\n\tTotal tasks: ", len(dbTasks))
-
   else:
     print("\tOption not valid")
 
+def printlists():
+  task = dbTasks
+  print(tabulate({"Tasks" : task, "Options" : options}, headers = "keys"))
+  menuOption = input("\tEnter an option ")
+  menu(menuOption)
 
-def imenu():
-    print("\n\tOptions for you task: \n\t0.Exit \n\t1.Add new Task \n\t2.List tasks \n\t3.Delete tasks \n\t4.Update tasks \n\t5.Total tasks")
-
-    menuOption = input("\tEnter an option ")
-    menu(menuOption)
 
 while(1):
-  imenu()
-
-  time.sleep(2)
   if platform == "win32": 
     os.system("cls")
   else:
     os.system("clear")
+  printlists()
+  time.sleep(0.5)
