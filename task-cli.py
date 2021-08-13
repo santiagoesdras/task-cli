@@ -1,7 +1,6 @@
 from tabulate import tabulate, tabulate_formats
 from sys import platform
 import os
-import time
 
 dbTasks = []
 options = ["0.Exit" , "1.Add new Task", "2.Delete tasks" , "3.Update tasks"]
@@ -56,4 +55,4 @@ while(1):
   else:
     os.system("clear")
   printlists()
-  time.sleep(0.5)
+
